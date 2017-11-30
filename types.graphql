@@ -22,8 +22,20 @@ type User @model {
 #   author: User! @relation(name: "UserPosts")
 # }
 
+enum Region {
+  North-America
+  Central-America
+  South-America
+  Europe
+  Africa
+  Middle-East
+  Asia
+  Eurasia
+  Island
+}
+
 type Location @model {
   id: ID! @isUnique
   name: String
-  description: String
-}
+  region: String!
+  }
