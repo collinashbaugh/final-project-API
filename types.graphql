@@ -23,12 +23,12 @@ type User @model {
 # }
 
 enum Region {
-  North-America
-  Central-America
-  South-America
+  NorthAmerica
+  CentralAmerica
+  SouthAmerica
   Europe
   Africa
-  Middle-East
+  MiddleEast
   Asia
   Eurasia
   Island
@@ -37,5 +37,6 @@ enum Region {
 type Location @model {
   id: ID! @isUnique
   name: String
-  region: String!
+  region: Region! @migrationValue(value: "Europe")
+  rating: Int! @migrationValue(value: "5")
   }
